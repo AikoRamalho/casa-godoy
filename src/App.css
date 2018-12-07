@@ -3,6 +3,11 @@
   flex-flow: row wrap;
   font-weight: bold;
   text-align: center;
+  color: #4EB1BA;
+}
+.wp{
+  height: 100vh;
+  background-color: #222930;
 }
 
 .wrapper > * {

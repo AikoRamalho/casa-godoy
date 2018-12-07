@@ -9,6 +9,9 @@ const styles = {
   root: {
     flexGrow: 1,
   },
+  appbar: {
+    backgroundColor: '#4EB1BA'
+  }
 };
 
 function SimpleAppBar(props) {
@@ -16,10 +19,10 @@ function SimpleAppBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar className={classes.appbar} position="static" color="default">
         <Toolbar>
           <Typography variant="h6" color="inherit">
-            Gráficos
+            Informações de Consumo
           </Typography>
         </Toolbar>
       </AppBar>
