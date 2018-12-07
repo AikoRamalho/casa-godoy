@@ -47,7 +47,7 @@ class App extends Component {
             <p>Esses são os gráficos relativos ao consumo e ao dinheiro economizado, respectivamente.</p>  
             <div className="container">
               <div className="item1">
-              Consumo Acumulado:
+              Consumo Total:
                 <VictoryChart theme={VictoryTheme.material}>
                   <VictoryAxis 
                    dependentAxis 
@@ -63,7 +63,7 @@ class App extends Component {
                 </VictoryChart>
               </div>
               <div className="item2">
-              Economia Acumulada:
+              Economia Total:
                 <VictoryChart theme={VictoryTheme.material}>
                   <VictoryAxis 
                    dependentAxis 
@@ -81,8 +81,8 @@ class App extends Component {
             </div>
           </article>
           <footer className="footer" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-            <Paper style={{height: '6vh', width: '35vh', alignSelf: 'center', backgroundColor: '#4EB1BA'}}>
-              <Typography style={{color: '#E9E9E9'}}>
+            <Paper style={{display: 'flex', height: '6vh', width: '35vh', alignSelf: 'center', backgroundColor: '#4EB1BA', justifyContent:'center', alignItems:'center'}}>
+              <Typography style={{color: '#E9E9E9', alignSelf: 'center', fontSize: '15px'}}>
                 Quantidade de água disponível: {this.state.waterNow}L
               </Typography>
             </Paper>
