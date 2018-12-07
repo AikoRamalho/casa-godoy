@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import SimpleAppBar from './Appbar'
 import * as V from 'victory';
-import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
+import { VictoryChart, VictoryLine, VictoryTheme, VictoryAxis } from 'victory';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 var generaldata = require('./backend/tst.json')
@@ -47,14 +47,34 @@ class App extends Component {
             <p>Esses são os gráficos relativos ao consumo e ao dinheiro economizado, respectivamente.</p>  
             <div className="container">
               <div className="item1">
-              Consumo Acumulado (Em mil litros/dia):
+              Consumo Acumulado:
                 <VictoryChart theme={VictoryTheme.material}>
+                  <VictoryAxis 
+                   dependentAxis 
+                   label="Litros (10^3)"
+                   style={{
+                    axisLabel: {fontSize: 15, padding:35}
+                   }}/>
+                  <VictoryAxis label="Dia"
+                  style={{
+                    axisLabel: {fontSize: 15, padding:30}
+                   }} />
                   <VictoryLine data={this.state.waterData}/>
                 </VictoryChart>
               </div>
               <div className="item2">
-              Economia Acumulada (Em reais/dia):
+              Economia Acumulada:
                 <VictoryChart theme={VictoryTheme.material}>
+                  <VictoryAxis 
+                   dependentAxis 
+                   label="Reais"
+                   style={{
+                    axisLabel: {fontSize: 15, padding:35}
+                   }}/>
+                  <VictoryAxis label="Dia"
+                  style={{
+                    axisLabel: {fontSize: 15, padding:30}
+                   }} />
                   <VictoryLine data={this.state.savingData}/>
                 </VictoryChart>            
               </div>
@@ -62,7 +82,7 @@ class App extends Component {
           </article>
           <footer className="footer" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
             <Paper style={{height: '6vh', width: '35vh', alignSelf: 'center', backgroundColor: '#4EB1BA'}}>
-              <Typography  variant="h6" style={{color: '#E9E9E9'}}>
+              <Typography style={{color: '#E9E9E9'}}>
                 Quantidade de água disponível: {this.state.waterNow}L
               </Typography>
             </Paper>
